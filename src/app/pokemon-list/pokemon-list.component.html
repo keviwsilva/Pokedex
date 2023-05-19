@@ -1,0 +1,11 @@
+
+<div class="search">
+    <h3>Escreva qual pokemon você quer ver</h3>
+    <input type="text" name="search" [(ngModel)]="filterTerm" placeholder="Escolha o nome ou tipo do pokemon"/>
+</div>
+<div class="results">
+    <h5 *ng></h5>
+</div>
+<div class="pokemon">
+<app-pokemon-card *ngFor="let pokemon of pokemonService.pokemons | filter: filterTerm" [pokemon]="pokemon"></app-pokemon-card>
+</div>
